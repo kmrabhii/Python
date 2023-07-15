@@ -8,7 +8,7 @@ x=int(input("Enter First Number:- "))
 y=int(input("Enter Second Number:- "))
 z=int(random.randint(x,y))
 
-c=3
+c=12
 n=0
 print("You Have Only",c,"Chances.")
 
