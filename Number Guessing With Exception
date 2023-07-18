@@ -1,0 +1,53 @@
+#  Number Guessing Game
+import random
+
+print("Number Guessing Game".center(50))
+
+def ngg(x,y,z):
+    if (y-x)<=5:
+        c=3
+    elif (y-x)<=10:
+        c = 5
+    elif (y-x)<=20:
+        c = 7
+    else:
+        c=10
+    n = 0
+    print(f"Search Between {x} and {y}")
+    print(f"You Have Only {c} Chances.")
+
+    while c > 0:
+        n = int(input("Enter Number:- "))
+        if n == z:
+            print(f"Congrats You Win..\nThe Number is:- {z}")
+            break
+        elif n > z:
+            print("Your Number is Greater..\nTry Smaller Number.")
+            c = c - 1
+            print(f"You Have {c} Chances Left.")
+        elif n < z:
+            print("Your Number is Smaller..\nTry Bigger Number.")
+            c = c - 1
+            print(f"You Have{c}Chances Left.")
+
+    if c == 0:
+        print(f"You Loose..\nNumber is:-{z}\nBetter Luck Next Time.")
+
+
+while True:
+    try:
+        x = int(input("Enter Lower Number:- "))
+        break
+    except:
+        print("Please Enter a Valid Integer Value")
+
+while True:
+    try:
+        y = int(input("Enter Upper Number:- "))
+        break
+    except:
+        print("Please Enter a Valid Integer Value")
+
+z = int(random.randint(x, y))
+
+ngg(x,y,z)
